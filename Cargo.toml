@@ -1,0 +1,37 @@
+[package]
+name = "aliyun-dypns"
+version = "0.1.0"
+edition = "2024"
+authors = ["yenharvey <cherrypeel@mewpaz.com>"]
+license = "MIT"
+description = "Rust SDK for Alibaba Cloud Phone Number Verification Service (DYPNS)"
+repository = "https://github.com/yenharvey/aliyun-dypns"
+homepage = "https://github.com/yenharvey/aliyun-dypns"
+readme = "README.md"
+keywords = ["aliyun", "sms", "verification", "dypns"]
+categories = ["api-bindings", "authentication"]
+
+[dependencies]
+reqwest = { version = "0.13", features = ["json"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "2.0"
+chrono = "0.4"
+hmac = "0.12"
+sha1 = "0.10"
+base64 = "0.22"
+uuid = { version = "1.20", features = ["v4"] }
+percent-encoding = "2.3"
+tokio = { version = "1", features = ["full"] }
+anyhow = "1.0.101"
+
+[dev-dependencies]
+tokio-test = "0.4"
+dotenv = "0.15"
+cargo-husky = { version = "1", default-features = false, features = [
+    "user-hooks",
+] }
+
+[[example]]
+name = "basic"
+path = "examples/basic.rs"
